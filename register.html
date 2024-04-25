@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div style=" display: flex; align-items: center; justify-content: center;">
+        <form class="form" action="form.php" method="POST">
+          <div class="form__title" style="background-color: rgb(232, 224, 224);">Student Details</div>
+          <p class="form__desc">
+            Please fill out the form below to sign up for a student account.
+          </p>
+          <div class="form__item">
+            <label for="name" class="form__label">Name (Legal/Office): </label>
+            <input type="text" class="form__input" name="name" id="name" pattern="^[A-Za-z\s]+$" placeholder="Ali bin Adam" required  >
+            <span class="form__error">Only alphabets are allowed</span>
+          </div>
+          <div class="form__item">
+            <label for="matricno" class="form__label">Matric Number: </label>
+            <input type="text" class="form__input form__input" name="matricno" id="matricno" pattern="^\d{7}$" placeholder="eg: XXXXXXX" required>
+            <span class="form__error">eg: 2017347</span>
+          </div>
+          <div class="form__item">
+              <label for="curraddress" class="form__label">Current Address: </label>
+              <textarea maxlength="100" class="form__input" name="curraddress" id="curraddress" pattern="^[A-Za-z0-9/\s,\-.]+$" required></textarea>
+              <span class="form__error">Special char allowed: . , / </span>
+          </div>
+          
+          <div class="form__item">
+            <label for="homeaddress" class="form__label">Home Address: </label>
+            <textarea maxlength="100" class="form__input" name="homeaddress" id="homeaddress" pattern="^[A-Za-z0-9/\s,\-.]+$" required></textarea>
+            <span class="form__error">A sample error message</span>
+          </div>
+          <div class="form__item">
+            <label for="email" class="form__label">Email (Gmail Account): </label>
+            <input type="email" class="form__input"  id="email" name="email" pattern="[a-z0-9._%+-]+@gmail+\.[a-z]{2,}$" placeholder="example@gmail.com" required>
+            <span class="form__error">eg: example@gmail.com</span>
+          </div>
+          <div class="form__item">
+              <label for="mobilephone" class="form__label">Mobile Phone Number: </label>
+              <input type="text" class="form__input"  id="mobilephone" name="mobilephone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="XXX-XXX-XXXX" requried>
+              <span class="form__error">eg: 010-123-5690</span>
+          </div>
+          <div class="form__item">
+            <label for="homephone" class="form__label">Home Phone Number (Emergency): </label>
+            <input type="text" class="form__input" id="homephone" name="homephone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="XXX-XXX-XXXX" required>
+            <span class="form__error">eg: 010-123-5690</span>
+          </div>
+      
+          <div class="form__item">
+            <button class="form__btn" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      
+        <script src="form.js"></script>
+        
+      </body>
+      </html>
